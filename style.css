@@ -1,0 +1,209 @@
+/* style.css */
+
+/* Общие стили */
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #1d1d1f;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1em 0;
+    text-align: center;
+  }
+  
+  .header-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #f5f5f5;
+    color: #86868b;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .footer-text {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+  
+  /* Кнопки */
+  .button {
+    padding: 0.75em 1.25em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button:hover {
+    transform: scale(1.03);
+  }
+  
+  .primary-button {
+    background-color: #007aff;
+    color: #fff;
+  }
+  
+  .primary-button:hover {
+    background-color: #0063d1;
+  }
+  
+  .secondary-button {
+    background-color: #e0e0e0;
+    color: #1d1d1f;
+  }
+  
+  .secondary-button:hover {
+    background-color: #d0d0d0;
+  }
+  
+  .danger-button {
+    background-color: #ff3b30;
+    color: #fff;
+  }
+  
+  .danger-button:hover {
+    background-color: #e0322a;
+  }
+  
+  /* Форма добавления заметки */
+  .new-note {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Размещаем textarea и кнопку вертикально */
+  }
+  
+  .note-input {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #c6c6c8;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Уменьшаем отступ между textarea и кнопкой */
+    font-size: 1rem;
+    font-family: 'SF Pro Display', sans-serif;
+    -webkit-appearance: none;
+    resize: none; /* Запрещаем изменение размера textarea */
+    min-height: 100px; /* Минимальная высота для textarea */
+  }
+  
+  .note-input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.3);
+  }
+  
+  /* Контейнер для кнопки "Добавить" */
+  .add-button-container {
+    display: flex;
+    justify-content: flex-end; /* Выравниваем кнопку справа */
+  }
+  
+  /* Список заметок */
+  .note-list {
+    padding: 0;
+  }
+  
+  .note-list-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Стиль для отдельной заметки */
+  .note-list-items li {
+    background-color: #fff;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;   /* Размещаем элементы вертикально */
+    justify-content: space-between;
+    align-items: stretch;  /* Растягиваем элементы по ширине */
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .note-list-items li:hover {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Контейнер для текста заметки */
+  .note-text-container {
+    margin-bottom: 10px; /* Отступ между текстом и кнопками */
+    word-wrap: break-word; /* Перенос слов, если текст длинный */
+  }
+  
+  /* Контейнер для кнопок */
+  .note-buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Выравниваем кнопки справа */
+  }
+  
+  .note-buttons-container button {
+    margin-left: 10px;
+  }
+  
+  /* Сообщение об офлайн-режиме */
+  .offline-message {
+    text-align: center;
+    color: #ff3b30;
+    font-weight: 500;
+    margin-top: 1em;
+  }
+  
+  /* Скрытый класс */
+  .hidden {
+    display: none;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 600px) {
+    .main-content {
+      padding: 10px;
+    }
+  
+    .note-list-items li {
+      flex-direction: column;
+      align-items: stretch; /* Растягиваем элементы по ширине */
+    }
+  
+    .note-buttons-container {
+      justify-content: flex-start; /* Выравниваем кнопки слева */
+      margin-top: 8px;
+    }
+  
+    .note-buttons-container button {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f5f5f5">  <!-- Светлый цвет темы -->
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1 class="header-title">Заметки</h1>
+    </header>
+
+    <main class="main-content">
+      <section class="new-note">
+        <textarea id="note-text" placeholder="Новая заметка..." class="note-input"></textarea>
+        <button id="add-note" class="button primary-button">Добавить</button>
+      </section>
+
+      <section class="note-list">
+        <ul id="notes" class="note-list-items"></ul>
+      </section>
+
+      <p id="offline-message" class="offline-message hidden">Офлайн-режим</p>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">&copy; 2025 МИРЭА</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => console.log('Service Worker registered:', registration))
+        .catch(error => console.log('Service Worker registration failed:', error));
+    }
+  </script>
+</body>
+</html>
